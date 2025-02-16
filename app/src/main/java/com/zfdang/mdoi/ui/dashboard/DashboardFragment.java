@@ -9,8 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zfdang.mdoi.databinding.FragmentDashboardBinding;
+import com.zfdang.mdoi.R;
 
 public class DashboardFragment extends Fragment {
 
@@ -26,6 +29,18 @@ public class DashboardFragment extends Fragment {
 
         final TextView textView = binding.textDashboard;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        // Sample image resource IDs
+        int[] imageResourceIds = {
+                R.drawable.ic_notifications_black_24dp,
+                R.drawable.ic_home_black_24dp
+                // Add more image resource IDs here
+        };
+
+        RecyclerView recyclerView = binding.recyclerView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new ImageAdapter(imageResourceIds));
+
         return root;
     }
 
