@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.dashboard;
+package com.zfdang.mdoi.ui.home;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +21,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageViewHolder> {
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_image, parent, false);
+                .inflate(R.layout.item_list, parent, false);
         return new ImageViewHolder(view);
     }
 

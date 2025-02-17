@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.dashboard;
+package com.zfdang.mdoi.ui.home;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -14,5 +14,6 @@ public class ImageViewHolder extends RecyclerView.ViewHolder {
     ImageViewHolder(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.imageView);
+        imageView.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_notifications_black_24dp));
     }
 }
