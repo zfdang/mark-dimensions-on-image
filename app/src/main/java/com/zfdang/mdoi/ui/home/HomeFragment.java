@@ -29,6 +29,7 @@ import com.zfdang.mdoi.databinding.FragmentHomeBinding;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
@@ -143,9 +144,16 @@ public class HomeFragment extends Fragment {
 
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
+        // Configure RecyclerView
         RecyclerView recyclerView = binding.recyclerView;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new ImageItemAdapter(homeViewModel.getImages().getValue()));
+        ImageItemAdapter adapter = new ImageItemAdapter(new ArrayList<>());
+        recyclerView.setAdapter(adapter);
+
+        // Observe LiveData changes
+        homeViewModel.getImages().observe(getViewLifecycleOwner(), imageItems -> {
+            adapter.setItems(imageItems);
+        });
     }
 
     @Override

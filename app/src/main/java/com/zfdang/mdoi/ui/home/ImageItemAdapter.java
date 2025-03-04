@@ -12,10 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.zfdang.mdoi.model.ImageItem;
 import com.zfdang.mdoi.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.ViewHolder> {
-    private final List<ImageItem> items;
+    private List<ImageItem> items;
 
     public ImageItemAdapter(List<ImageItem> items) {
         this.items = items;
@@ -41,6 +42,11 @@ public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.View
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public void setItems(List<ImageItem> newItems) {
+        items = new ArrayList<>(newItems);
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

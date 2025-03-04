@@ -16,9 +16,11 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mImages.setValue(new ArrayList<>());
-        mImages.getValue().add(new ImageItem(R.drawable.ic_home_black_24dp, "Living Room", "2024-03-15"));
-        mImages.getValue().add(new ImageItem(R.drawable.ic_dashboard_black_24dp, "Bedroom", "2024-03-16"));
-        mImages.getValue().add(new ImageItem(R.drawable.ic_notifications_24dp, "Kitchen", "2024-03-17"));
+        List<ImageItem> newList = new ArrayList<>(mImages.getValue());
+        newList.add(new ImageItem(R.drawable.ic_home_black_24dp, "Living Room", "2024-03-15"));
+        newList.add(new ImageItem(R.drawable.ic_dashboard_black_24dp, "Bedroom", "2024-03-16"));
+        newList.add(new ImageItem(R.drawable.ic_notifications_24dp, "Kitchen", "2024-03-17"));
+        mImages.setValue(newList);
     }
 
     public LiveData<List<ImageItem>> getImages() {

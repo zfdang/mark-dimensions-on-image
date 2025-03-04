@@ -14,6 +14,6 @@ public class ImageViewHolder extends RecyclerView.ViewHolder {
     ImageViewHolder(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.imageView);
-        imageView.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_notifications_black_24dp));
+        // Image will be set dynamically by adapter
     }
 }
