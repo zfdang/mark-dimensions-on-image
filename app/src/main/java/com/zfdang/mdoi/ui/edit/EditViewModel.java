@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.dashboard;
+package com.zfdang.mdoi.ui.edit;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,11 +6,11 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardViewModel extends ViewModel {
+public class EditViewModel extends ViewModel {
 
     private final MutableLiveData<List<DrawingOverlayView.Line>> mLines = new MutableLiveData<>();
 
-    public DashboardViewModel() {
+    public EditViewModel() {
         mLines.setValue(new ArrayList<>());
     }
 

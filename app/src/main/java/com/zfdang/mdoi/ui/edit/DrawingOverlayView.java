@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.dashboard;
+package com.zfdang.mdoi.ui.edit;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,36 +1,32 @@
-package com.zfdang.mdoi.ui.dashboard;
+package com.zfdang.mdoi.ui.edit;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.chrisbanes.photoview.PhotoView;
-import com.zfdang.mdoi.databinding.FragmentDashboardBinding;
 import com.zfdang.mdoi.R;
-import com.zfdang.mdoi.ui.home.ImageAdapter;
+import com.zfdang.mdoi.databinding.FragmentEditBinding;
 
-public class DashboardFragment extends Fragment {
+public class EditFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentEditBinding binding;
 
     private PhotoView photoView;
     private DrawingOverlayView drawingOverlay;
-    private DashboardViewModel viewModel;
+    private EditViewModel viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        EditViewModel dashboardViewModel =
+                new ViewModelProvider(this).get(EditViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentEditBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 //        final TextView textView = binding.textDashboard;
@@ -43,7 +39,7 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+        viewModel = new ViewModelProvider(this).get(EditViewModel.class);
         
         // Load sample image
         photoView.setImageResource(R.drawable.sample_image);

@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.notifications;
+package com.zfdang.mdoi.ui.about;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
