@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.zfdang.mdoi.ui.edit.EditFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_edit"
         tools:layout="@layout/fragment_edit" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.zfdang.mdoi.ui.about.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_about"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
