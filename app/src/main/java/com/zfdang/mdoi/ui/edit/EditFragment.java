@@ -42,7 +42,7 @@ public class EditFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(EditViewModel.class);
         
         // Load sample image
-        photoView.setImageResource(R.drawable.sample_image);
+        photoView.setImageResource(R.drawable.sample);
         
         // Observe line data changes
         viewModel.getLines().observe(getViewLifecycleOwner(), lines -> {

@@ -3,7 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-<string name="pick_image">Pick Image</string>
-<string name="take_photo">Take Photo</string>
-<string name="image_preview_description">Image preview</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="image_preview_description">Image preview</string>
+    <string name="draw">Draw</string>
+    <string name="edit">Edit</string>
+    <string name="mark">Mark</string>
+    <string name="delete">Delete</string>
+    <string name="image">Image</string>
 </resources>
