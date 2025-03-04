@@ -15,11 +15,14 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zfdang.mdoi.BuildConfig;
 import com.zfdang.mdoi.databinding.FragmentHomeBinding;
@@ -38,7 +41,7 @@ public class HomeFragment extends Fragment {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     Uri imageUri = result.getData().getData();
-                    binding.imagePreview.setImageURI(imageUri);
+//                    binding.imagePreview.setImageURI(imageUri);
                 }
             }
     );
@@ -47,7 +50,7 @@ public class HomeFragment extends Fragment {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    binding.imagePreview.setImageURI(currentPhotoUri);
+//                    binding.imagePreview.setImageURI(currentPhotoUri);
                 }
             }
     );
@@ -132,6 +135,17 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+
+        RecyclerView recyclerView = binding.recyclerView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new ImageItemAdapter(homeViewModel.getImages().getValue()));
     }
 
     @Override

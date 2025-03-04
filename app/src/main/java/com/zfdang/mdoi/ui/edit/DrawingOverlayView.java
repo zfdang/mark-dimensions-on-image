@@ -8,23 +8,16 @@ import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.zfdang.mdoi.model.Measure;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class DrawingOverlayView extends View {
     private Paint paint = new Paint();
-    private List<Line> lines = new ArrayList<>();
+    private List<Measure> lines = new ArrayList<>();
     private PointF startPoint = new PointF();
-    
-    public static class Line {
-        public float startX, startY, endX, endY;
-        public Line(float sx, float sy, float ex, float ey) {
-            startX = sx;
-            startY = sy;
-            endX = ex;
-            endY = ey;
-        }
-    }
 
     public DrawingOverlayView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -41,7 +34,7 @@ public class DrawingOverlayView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        for (Line line : lines) {
+        for (Measure line : lines) {
             canvas.drawLine(line.startX, line.startY, line.endX, line.endY, paint);
         }
     }
@@ -60,7 +53,7 @@ public class DrawingOverlayView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
-                lines.add(new Line(startPoint.x, startPoint.y, event.getX(), event.getY()));
+                lines.add(new Measure(startPoint.x, startPoint.y, event.getX(), event.getY(), 0));
                 if(drawListener != null) {
                     drawListener.onLineDrawn();
                 }
@@ -70,12 +63,12 @@ public class DrawingOverlayView extends View {
         return false;
     }
 
-    public void setLines(List<Line> newLines) {
+    public void setLines(List<Measure> newLines) {
         lines = new ArrayList<>(newLines);
         invalidate();
     }
 
-    public List<Line> getLines() {
+    public List<Measure> getLines() {
         return new ArrayList<>(lines);
     }
 }
