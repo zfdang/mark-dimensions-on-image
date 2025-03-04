@@ -12,6 +12,11 @@ public class EditViewModel extends ViewModel {
 
     public EditViewModel() {
         mLines.setValue(new ArrayList<>());
+        List<DrawingOverlayView.Line> initialLines = new ArrayList<>();
+        initialLines.add(new DrawingOverlayView.Line(100, 500, 900, 500)); // Horizontal line
+        initialLines.add(new DrawingOverlayView.Line(500, 100, 500, 900)); // Vertical line
+        initialLines.add(new DrawingOverlayView.Line(200, 200, 800, 800)); // Diagonal line
+        mLines.setValue(initialLines);
     }
 
     public LiveData<List<DrawingOverlayView.Line>> getLines() {

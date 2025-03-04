@@ -13,7 +13,7 @@
     android:layout_height="wrap_content"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/photo_view"
     android:orientation="horizontal"
     android:gravity="center"
     android:padding="8dp"
@@ -22,27 +22,49 @@
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button1"
+            android:id="@+id/bt_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:icon="@drawable/image_24px"
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             />
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
+            android:id="@+id/bt_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:icon="@drawable/add_24px"
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             />
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button3"
+            android:id="@+id/bt_linestart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/edit_24px"
+            app:icon="@drawable/line_start_24px"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_lineend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/line_end_24px"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_ruler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ruler_24px"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/delete_24px"
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             />
     </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -60,13 +82,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
          />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
     <com.zfdang.mdoi.ui.edit.DrawingOverlayView
         android:id="@+id/drawing_overlay"
         android:layout_width="0dp"
@@ -77,5 +92,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
