@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
+    android:layout_height="wrap_content"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -22,25 +22,25 @@
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/text_home">
 
         <Button
             android:id="@+id/button_pick_image"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Pick Image"
-            android:layout_marginEnd="8dp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Pick Image" />
 
         <Button
             android:id="@+id/button_take_photo"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Take Photo"
-            android:layout_marginStart="8dp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Take Photo" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,10 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/text_home"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_container"
         tools:context=".ui.dashboard.DashboardFragment">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -68,7 +68,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintGuide_begin="56dp"
         app:layout_constraintGuide_end="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

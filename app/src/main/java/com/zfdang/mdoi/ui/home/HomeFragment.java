@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zfdang.mdoi.BuildConfig;
-import com.zfdang.mdoi.databinding.FragmentHomeBinding;
+import com.zfdang.mdoi.databinding.FragmentListBinding;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentListBinding binding;
     private Uri currentPhotoUri;
     private static final int PERMISSION_REQUEST_CODE = 100;
 
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
                             ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         binding.textHome.setText("Select or Take a Photo");
