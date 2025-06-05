@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.home;
+package com.zfdang.mdoi.ui.list;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,11 +10,11 @@ import com.zfdang.mdoi.model.ImageItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeViewModel extends ViewModel {
+public class ListViewModel extends ViewModel {
 
     private final MutableLiveData<List<ImageItem>> mImages = new MutableLiveData<>();
 
-    public HomeViewModel() {
+    public ListViewModel() {
         mImages.setValue(new ArrayList<>());
         List<ImageItem> newList = new ArrayList<>(mImages.getValue());
         newList.add(new ImageItem(R.drawable.ic_home_black_24dp, "Living Room", "2024-03-15"));

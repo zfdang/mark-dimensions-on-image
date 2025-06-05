@@ -1,4 +1,4 @@
-package com.zfdang.mdoi.ui.home;
+package com.zfdang.mdoi.ui.list;
 
 import android.view.View;
 import android.widget.ImageView;

@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_list">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.zfdang.mdoi.ui.home.HomeFragment"
+        android:id="@+id/navigation_list"
+        android:name="com.zfdang.mdoi.ui.list.ListFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_list" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_edit"
         android:name="com.zfdang.mdoi.ui.edit.EditFragment"
         android:label="@string/title_edit"
         tools:layout="@layout/fragment_edit" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.zfdang.mdoi.ui.about.NotificationsFragment"
+        android:id="@+id/navigation_about"
+        android:name="com.zfdang.mdoi.ui.about.AboutFragment"
         android:label="@string/title_about"
         tools:layout="@layout/fragment_about" />
 </navigation>

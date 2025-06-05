@@ -12,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.zfdang.mdoi.databinding.FragmentAboutBinding;
 
-public class NotificationsFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
     private FragmentAboutBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        AboutViewModel aboutViewModel =
+                new ViewModelProvider(this).get(AboutViewModel.class);
 
         binding = FragmentAboutBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        aboutViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
