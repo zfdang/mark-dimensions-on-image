@@ -21,10 +21,12 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zfdang.mdoi.BuildConfig;
+import com.zfdang.mdoi.R;
 import com.zfdang.mdoi.databinding.FragmentHomeBinding;
 
 import java.io.File;
@@ -41,7 +43,11 @@ public class HomeFragment extends Fragment {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     Uri imageUri = result.getData().getData();
-//                    binding.imagePreview.setImageURI(imageUri);
+                    if (imageUri != null) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("imageUri", imageUri.toString());
+                        NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_editFragment, bundle);
+                    }
                 }
             }
     );
@@ -50,7 +56,11 @@ public class HomeFragment extends Fragment {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-//                    binding.imagePreview.setImageURI(currentPhotoUri);
+                    if (currentPhotoUri != null) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("imageUri", currentPhotoUri.toString());
+                        NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_editFragment, bundle);
+                    }
                 }
             }
     );
